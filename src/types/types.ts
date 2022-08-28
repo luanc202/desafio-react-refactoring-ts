@@ -24,3 +24,15 @@ export interface InputProps {
     icon?: React.ComponentType<IconBaseProps>;
     placeholder?: string;
 }
+
+export interface ModalProps {
+    isOpen: boolean;
+    setIsOpen: () => void;
+    children: React.ReactNode;
+}
+
+export interface ModalPropsAddFood {
+    setIsOpen: () => void;
+    handleAddFood: (data: object) => void;
+    isOpen: boolean;
+}
