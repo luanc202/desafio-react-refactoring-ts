@@ -15,6 +15,8 @@ export interface FoodProps {
     handleDelete: (id: number) => void;
 }
 
+export type FoodDataType = Omit<FoodType, "id" | "available">;
+
 export interface HeaderProps {
     openModal: () => void;
 }
@@ -31,8 +33,15 @@ export interface ModalProps {
     children: React.ReactNode;
 }
 
-export interface ModalPropsAddFood {
+export interface ModalAddFoodProps {
     setIsOpen: () => void;
-    handleAddFood: (data: object) => void;
+    handleAddFood: (data: FoodType) => void;
     isOpen: boolean;
+}
+
+export interface ModalEditFoodProps {
+    isOpen: boolean;
+    setIsOpen: () => void;
+    handleUpdateFood: (data: FoodType) => void;
+    editingFood: FoodType;
 }
